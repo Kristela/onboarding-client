@@ -49,6 +49,14 @@ h1{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:40px;lin
 .article a.inline{color:var(--action);text-decoration:underline;text-underline-offset:2px}
 .article strong{color:var(--navy)}
 .leadin{font-size:18px;font-weight:600;color:var(--navy);line-height:1.45;margin:0 0 12px}
+.qa{border:1px solid var(--border-blue);border-radius:var(--r3);background:var(--bg-gray);overflow:hidden;margin:0 0 14px}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 20px;font-family:var(--serif);font-weight:700;color:var(--navy);font-size:19px;line-height:1.3}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .chev{color:var(--action);font-size:22px;transition:transform .2s;flex-shrink:0}
+.qa[open] summary .chev{transform:rotate(90deg)}
+.qa[open] summary{border-bottom:1px solid var(--border-blue)}
+.qa .qabody{padding:14px 20px 2px}
+.qa .qabody p{font-size:18px;line-height:1.55;margin:0 0 16px}
 
 /* Hero coin-kaart = jagatav ühik */
 .coincard{background:var(--bg-blue);border:1px solid var(--border-blue);border-radius:var(--r4);padding:26px 28px 20px;margin:0 0 36px}
@@ -178,11 +186,20 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
 
   <p>Pensionisambasse kogumine kõlab ausalt öeldes õudselt ebaseksikalt. Ja ometi olen veendunud, et see on üks kavalamaid samme, mida saame oma tuleviku heaks teha. Miks?</p>
 
-  <p>Investeerimises kehtib põhimõte: kasuta alati kõigepealt ära maksueelisega võimalused. II samba sissemaksed on tulumaksuvabad. Tänu sellele saad iga <strong>78 sendi</strong> eest, mis sa oma netopalgast „ohverdad", oma II sambasse <strong>terve euro</strong>. Kui investeeriksid sama raha mujale, alustaksid 22% miinusega.</p>
+  <details class="qa">
+    <summary>Miks on kaval II sambasse rohkem koguda? <span class="chev">›</span></summary>
+    <div class="qabody">
+      <p>Investeerimises kehtib põhimõte: kasuta alati kõigepealt ära maksueelisega võimalused. II samba sissemaksed on tulumaksuvabad. Tänu sellele saad iga <strong>78 sendi</strong> eest, mis sa oma netopalgast „ohverdad", oma II sambasse <strong>terve euro</strong>. Kui investeeriksid sama raha mujale, alustaksid 22% miinusega.</p>
+    </div>
+  </details>
 
-  <p>Su palgast liigub palgapäeval II sambasse vaikimisi <strong>2%</strong>. Riik suunab omalt poolt sinu II sambasse veel <strong>4% sinu brutopalga suurusest</strong>. (See tuleb sotsiaalmaksust – II sambasse kogumine on ainus viis suunata see enda isiklikule kontole.)</p>
-
-  <p>Sina saad üks kord aastas sissemakse suurust tõsta (või vajadusel langetada) – valikus on 2% kõrval 4% või 6%. Mina ise olen juba suunanud oma II sambasse 6% oma palgast – nagu ka juba ligi 50 000 Eesti inimest.</p>
+  <details class="qa">
+    <summary>Mida sissemakse tõstmine tähendab? <span class="chev">›</span></summary>
+    <div class="qabody">
+      <p>Su palgast liigub palgapäeval II sambasse vaikimisi <strong>2%</strong>. Riik suunab omalt poolt sinu II sambasse veel <strong>4% sinu brutopalga suurusest</strong>. (See tuleb sotsiaalmaksust – II sambasse kogumine on ainus viis suunata see enda isiklikule kontole.)</p>
+      <p>Sina saad üks kord aastas sissemakse suurust tõsta (või vajadusel langetada) – valikus on 2% kõrval 4% või 6%. Mina ise olen juba suunanud oma II sambasse 6% oma palgast – nagu ka juba ligi 50 000 Eesti inimest.</p>
+    </div>
+  </details>
 
   <h2>Kuidas II samba sissemakse tõstmine sinu elu mõjutab?</h2>
   <p>Vaata, kui palju sa sissemakseid tõstes II sambasse säästaksid ja kui palju tulumaksult võidaksid:</p>
