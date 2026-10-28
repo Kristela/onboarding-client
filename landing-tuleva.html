@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Tõsta II samba makset · Tuleva (prototüüp)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap">
+<style>
+:root{
+  --navy:#002F63;--navy2:#5C738C;--state:#9FB3C8;--bright:#00AEEA;--action:#006CE6;--action-l:#008DEE;
+  --text:#293036;--text2:#5A6672;--text3:#8A8D91;--green:#008300;--bg:#FFFFFF;
+  --bg-blue:#EDF7FD;--bg-blue2:#F2FAFE;--bg-gray:#F6F8FA;--border:#E4E9EF;--border-blue:#D3E8F5;
+  --gray-coin:#C8D0D8;--serif:'Merriweather',Georgia,serif;--sans:'Roboto',Arial,sans-serif;
+  --r2:8px;--r3:12px;--r4:12px;--maxw:728px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:20px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.proto{background:#FFF6D9;border-bottom:1px solid #F5E9CC;color:#6b5d20;font:600 13px var(--sans);text-align:center;padding:8px 12px}
+/* Päis — Tuleva päris päise staatiline koopia (mitteklikitav) */
+.thead{border-bottom:1px solid #E4E9EF;background:#fff;position:sticky;top:0;z-index:10}
+.thead .in{display:flex;align-items:center;gap:26px;padding:12px 30px;max-width:1440px;margin:0 auto}
+.thead .tlogo{flex-shrink:0;display:flex;align-items:center}
+.thead .tlogo svg{height:38px;width:auto;display:block}
+.thead .tnav{display:flex;align-items:center;gap:22px;margin-left:8px}
+.thead .tnav span{position:relative;display:flex;align-items:center;gap:5px;font-size:15px;font-weight:600;color:#13365c;white-space:nowrap}
+.thead .tnav span.active{color:#006CE6}
+.thead .tnav span.active::after{content:"";position:absolute;left:0;right:15px;bottom:-5px;height:2px;background:#006CE6}
+.thead .tnav .car{font-size:9px;opacity:.6}
+.thead .tright{margin-left:auto;display:flex;align-items:center;gap:14px;flex-shrink:0}
+.thead .ten{font-size:14px;font-weight:600;color:#006CE6}
+.thead .tbtn{font-size:14px;font-weight:700;border-radius:6px;padding:9px 16px;white-space:nowrap}
+.thead .tbtn.out{color:#006CE6;border:1px solid #9cc3ef;background:#fff}
+.thead .tbtn.fill{color:#fff;background:#1177e8}
+.thead .tburger{display:none;font-size:24px;color:#13365c;margin-left:auto;line-height:1}
+@media(max-width:980px){.thead .tnav,.thead .ten,.thead .tbtn{display:none}.thead .tburger{display:block}}
+.article{max-width:var(--maxw);margin:0 auto;padding:36px 20px 24px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--action);margin-bottom:14px}
+h1{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:40px;line-height:52px;margin:0 0 20px}
+.dek{font-size:24px;line-height:40px;color:var(--text);margin:0 0 32px}
+.byline{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 0;margin-bottom:28px}
+.byline .who{color:var(--text);font-weight:600}.byline .share{margin-left:auto;display:flex;gap:8px}
+.byline .share b{width:30px;height:30px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:13px;font-weight:700}
+.article p{margin:0 0 30px}
+.article h2{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:28px;line-height:36px;margin:48px 0 24px}
+.article a.inline{color:var(--action);text-decoration:underline;text-underline-offset:2px}
+.article strong{color:var(--navy)}
+.leadin{font-size:18px;font-weight:600;color:var(--navy);line-height:1.45;margin:0 0 12px}
+.qa{border:1px solid var(--border-blue);border-radius:var(--r3);background:var(--bg-gray);overflow:hidden;margin:0 0 14px}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 20px;font-family:var(--serif);font-weight:700;color:var(--navy);font-size:19px;line-height:1.3}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .chev{color:var(--action);font-size:22px;transition:transform .2s;flex-shrink:0}
+.qa[open] summary .chev{transform:rotate(90deg)}
+.qa[open] summary{border-bottom:1px solid var(--border-blue)}
+.qa .qabody{padding:14px 20px 2px}
+.qa .qabody p{font-size:18px;line-height:1.55;margin:0 0 16px}
+
+/* Hero coin-kaart = jagatav ühik */
+.coincard{background:var(--bg-blue);border:1px solid var(--border-blue);border-radius:var(--r4);padding:26px 28px 20px;margin:0 0 36px}
+.coincard .cc-kicker{text-align:center;font-size:14px;font-weight:600;color:var(--action);letter-spacing:.01em;margin:0 0 6px}
+.coincard .cc-kicker b{font-weight:800}
+.coins-big{display:flex;align-items:center;justify-content:center;gap:18px;margin:8px 0 10px}
+.coins-big .coin{border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;line-height:1.05;font-family:var(--serif);text-align:center}
+.coins-big .coin small{font-weight:500;font-size:14px;opacity:.95;margin-top:4px;font-family:var(--sans);padding:0 8px}
+.coins-big .coin.net{width:132px;height:132px;background:var(--gray-coin);color:var(--navy);font-size:23px}
+.coins-big .coin.pil{width:150px;height:150px;background:var(--bright);font-size:30px}
+.coins-big .arrow{font-size:38px;color:var(--navy);opacity:.45}
+.coincard .cc-hook{text-align:center;font-family:var(--serif);font-weight:700;color:var(--navy);font-size:23px;line-height:1.25;margin:10px 0 12px;text-wrap:balance}
+.coincard .cc-foot{font-size:12.5px;color:var(--text2);text-align:center;border-top:1px solid var(--border-blue);padding-top:10px;margin:0;line-height:1.45}
+
+/* Kalkulaator */
+.calc{border:1px solid var(--border-blue);border-radius:var(--r4);background:var(--bg-gray);padding:24px;margin:32px 0;font-size:17px}
+.calc h3{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:21px;margin:0 0 14px;line-height:1.25}
+.calc .trans{font-size:18px;font-weight:600;color:var(--navy);line-height:1.45;margin:18px 2px 14px}
+.inputs{padding:0;margin-bottom:22px}
+.field{margin-bottom:16px}.field:last-child{margin-bottom:0}
+.inputs label{display:block;font-size:14px;font-weight:600;color:var(--text);margin-bottom:7px}
+.hint{font-size:13px;color:var(--text2);margin-top:6px}
+.salary-row{display:flex;align-items:center;gap:10px}
+input[type=number]{font-family:var(--sans);font-size:20px;font-weight:700;color:var(--navy);border:1px solid var(--border);border-radius:var(--r2);padding:10px 12px;width:150px;background:#fff}
+input[type=number]:focus{outline:none;border-color:var(--action);box-shadow:0 0 0 3px rgba(0,108,230,.15)}
+.unit{color:var(--text2)}
+.seg{display:inline-flex;border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;background:#fff}
+.seg button{font-family:var(--sans);font-size:17px;font-weight:700;color:var(--text2);background:#fff;border:0;padding:12px 24px;cursor:pointer;border-right:1px solid var(--border);min-width:68px}
+.seg button:last-child{border-right:0}.seg button[aria-pressed=true]{background:var(--action);color:#fff}
+input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;color:var(--navy)}
+.adv{display:flex;gap:20px;flex-wrap:wrap}.adv .field{flex:1;min-width:160px;margin:0}
+
+/* 1) Maksuvõit (ilma müntideta, ilma +28%) */
+.block{background:#fff;border:1px solid var(--border);border-radius:var(--r3);padding:18px;margin-bottom:14px}
+.block h4{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:18px;margin:0 0 10px}
+.taxlead{font-size:16px;color:var(--text);margin:0 0 12px}.taxlead b{color:var(--navy)}
+.threes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:6px}
+.card{padding:14px 10px;text-align:center}
+.card .big{font-family:var(--serif);font-weight:700;font-size:22px;line-height:1.1;margin:0 0 4px}.card .cl{font-size:14px;color:var(--text2);line-height:1.3}
+.card.pil{background:var(--bg-blue2);border-radius:8px}.card.pil .big{color:var(--action)}.card.tax .big{color:var(--green)}.card.net .big{color:var(--navy)}
+.card .pilnote{font-size:13px;color:var(--text2);margin:5px 0 0;line-height:1.3}
+.taxpara{font-size:17px;color:var(--text);margin:10px 0 0}
+
+/* Vahe-sisend (vanus+tootlus wealth jaoks) */
+.midinput{background:var(--bg-blue2);border:1px solid var(--border-blue);border-radius:var(--r3);padding:16px 18px;margin-bottom:14px}
+.midinput .mi-lead{font-weight:600;color:var(--navy);font-size:15px;margin:0 0 12px}
+
+/* 2) Vara kasv */
+.wealth{background:#fff;border:1px solid var(--border-blue);border-radius:var(--r3);padding:18px;margin-bottom:14px}
+.wealth h4{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:18px;margin:0 0 12px}
+.wealth-viz{display:flex;gap:18px;align-items:stretch}
+.vbars{display:flex;align-items:flex-end;gap:12px;flex:0 0 38%;height:196px;padding-top:2px}
+.vbar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.vbar .vval{font-family:var(--serif);font-weight:700;font-size:12px;color:var(--navy);margin-bottom:6px;white-space:nowrap}.vbar.dim .vval{color:var(--text2)}
+.vbar .vcol{width:100%;max-width:50px;border-radius:7px 7px 0 0;background:var(--navy);transition:height .55s ease}.vbar.dim .vcol{background:var(--gray-coin)}
+.vbar .vlbl{font-size:14px;font-weight:700;color:var(--navy);margin-top:8px}.vbar.dim .vlbl{color:var(--text2)}
+.chart-wrap{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.chart-wrap svg{width:100%;height:auto;display:block}.chart-wrap .cy,.chart-wrap .cx{font-size:10px;fill:var(--text3)}
+.chart-wrap .grid{stroke:var(--border);stroke-width:1}.chart-wrap .cend{font-size:11px;font-weight:700}
+.chart-cap{font-size:12px;color:var(--text3);text-align:center;margin-top:6px}
+.note-proj{font-size:13px;color:var(--text2);background:var(--bg-blue2);border-radius:var(--r2);padding:10px 12px;margin-top:12px;line-height:1.45}
+.reassure{background:var(--bg-blue2);border:1px solid var(--border-blue);border-radius:var(--r3);padding:16px 18px;margin:0 0 20px}
+.reassure h4{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:18px;margin:0 0 8px}
+.reassure p{font-size:16px;color:var(--text);line-height:1.55;margin:0 0 10px}
+.reassure p:last-child{margin-bottom:0}
+@media(max-width:560px){.wealth-viz{flex-direction:column}.vbars{flex-basis:auto;width:100%;height:150px}.threes{grid-template-columns:1fr}}
+
+.calc details{border:1px solid var(--border);border-radius:var(--r2);margin-bottom:12px;background:#fff;overflow:hidden}
+.calc summary{cursor:pointer;padding:13px 16px;font-weight:600;color:var(--navy);font-size:15px;list-style:none;display:flex;justify-content:space-between}
+.calc summary::-webkit-details-marker{display:none}
+.calc summary .chev{color:var(--action);transition:transform .2s;display:inline-block}
+.calc details[open] summary .chev{transform:rotate(90deg)}
+.calc details .dbody{padding:4px 16px 16px}
+.stack{display:flex;height:36px;border-radius:var(--r2);overflow:hidden;margin:4px 0 12px;border:1px solid var(--border)}
+.stack span{display:block;height:100%;transition:width .5s}
+.s-net{background:var(--navy2)}.s-state{background:var(--state)}.s-tax{background:var(--bright)}.s-grow{background:var(--navy)}
+.legend{display:flex;flex-direction:column;gap:7px;font-size:14px;margin-bottom:6px}
+.legend div{display:flex;align-items:center;gap:8px}.dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.d-net{background:var(--navy2)}.d-state{background:var(--state)}.d-tax{background:var(--bright)}.d-grow{background:var(--navy)}.legend .v{margin-left:auto;font-weight:700;color:var(--navy)}
+.calc .assume ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--text);line-height:1.5}.calc .assume li{margin-bottom:7px}
+.calc .disc{font-size:12.5px;color:var(--text2);margin:12px 2px 14px;line-height:1.5}
+.cta{display:block;width:100%;text-align:center;background:var(--action);color:#fff;font-weight:700;font-size:18px;border:0;border-radius:var(--r2);padding:15px;text-decoration:none}
+.cta:hover{background:var(--action-l)}
+.cta-2l{display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 15px}
+.cta-2l .cta-main{font-size:18px;font-weight:700}
+.cta-2l .cta-dl{font-size:13px;font-weight:500;opacity:.9}
+.cta-sub{text-align:center;font-size:13.5px;margin:10px 0 0;color:var(--text2)}.cta-sub b{color:var(--navy)}
+.cta-reassure{text-align:center;font-size:13.5px;color:var(--text2);margin:10px auto 0;max-width:500px;line-height:1.5}
+.trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;font-size:13px;font-weight:600;color:var(--navy2);margin:16px auto 4px;max-width:640px;text-align:center}
+.midnote{font-size:13px;color:var(--text2);background:var(--bg-gray);border:1px solid var(--border);border-radius:var(--r2);padding:12px 14px;margin:14px 0;line-height:1.5}.midnote b{color:var(--navy)}
+.steps{display:grid;gap:14px;margin:18px 0}
+.step{display:flex;gap:14px;align-items:flex-start}
+.step .num{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--action);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+.step .stext{font-size:17px;line-height:1.5;padding-top:3px}.step .stext b{color:var(--navy)}
+.end-cta{margin:8px 0}.deadline{text-align:center;font-size:13px;color:var(--text2);margin-top:10px}.deadline b{color:var(--navy)}
+
+
+.legal{border-top:1px solid var(--border);margin-top:40px;padding:22px 0 10px}
+.legal p{font-size:12.5px;color:var(--text3);line-height:1.55;margin:0 0 10px}
+.sitefoot{background:var(--bg-gray);border-top:1px solid var(--border);margin-top:16px;padding:26px 20px;text-align:center;color:var(--text3);font-size:13px}
+</style>
+</head>
+<body>
+<div class="proto">⚠ PROTOTÜÜP · uus landing Tuleva maja-stiilis — ei ole investeerimissoovitus, numbrid ja väited vajavad compliance- ja faktikontrolli (tootlus, tasu %, liikmete arv, custodian).</div>
+
+<header class="thead"><div class="in">
+  <div class="tlogo"><svg fill="none" height="66" viewBox="0 0 146 66" width="146" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill-rule="evenodd"><g fill="#002f63"><path d="m94.6888 50.6664c-1.029-3.461-3.602-5.285-6.689-5.285-3.086 0-5.612 1.917-6.408 5.285zm4.49 8.747c-2.713 3.414-6.455 5.472-10.524 5.519-7.904 0-12.488-5.94-12.488-11.928 0-5.986 4.584-11.926 12.488-11.926 4.724 0 11.7402 3.882 11.7402 12.722v.888h-18.8032c.282 3.461 3.509 5.941 6.923 5.941 2.619 0 4.864-1.263 6.548-3.508zm39.6892-5.7953c-1.43.28-2.798.531-4.158.821-1.171.249-2.357.47-3.49.842-.965.316-1.768.942-1.907 2.062-.189 1.514.68 2.577 2.246 2.836 1.234.203 2.461.16 3.666-.148 1.703-.435 3.118-1.29 3.469-3.147.206-1.089.128-2.231.174-3.266zm7.131 10.546c-1.7.624-3.396.681-4.889-.238-.65-.4-.995-1.052-1.241-1.822-.3.279-.549.538-.825.764-1.113.91-2.419 1.39-3.812 1.648-2.118.393-4.234.482-6.342-.097-2.751-.757-4.48-2.632-4.763-5.37-.289-2.8.754-5.003 3.205-6.478 1.846-1.111 3.891-1.625 5.983-1.994 1.349-.237 2.709-.419 4.054-.675.591-.113 1.254-.26 1.402-.988.164-.805.065-1.584-.546-2.212-.738-.758-1.701-.981-2.7-1.057-2.797-.211-4.882.787-7.209 3.084-1.104-1.041-2.091-1.97-3.118-2.937 1.417-1.853 2.893-2.949 4.863-3.724 2.405-.947 4.889-1.072 7.415-.686 1.653.252 3.188.797 4.453 1.942 1.25 1.131 1.863 2.581 2.011 4.228.079.878.073 1.766.076 2.65.009 2.547.003 5.094.003 7.641 0 .137-.001.274.003.411.039 1.344.383 1.694 1.716 1.745.073.003.149.004.261.004zm-95.358.6195c1.808.021 3.577-.305 5.281-1.116 2.79-1.33 4.353-3.578 4.802-6.611.095-.646.125-1.559.125-1.959v-13.191h-5.349v12.657c-.004.679-.082 1.371-.232 2.033-.416 1.837-1.641 2.863-3.451 3.199-.393.073-.786.114-1.177.118-.391-.004-.784-.045-1.177-.118-1.809-.336-3.035-1.362-3.451-3.199-.15-.662-.228-1.354-.231-2.033v-12.657h-5.35v13.191c0 .4.03 1.313.126 1.959.449 3.033 2.011 5.281 4.801 6.611 1.704.811 3.475 1.137 5.283 1.116z"/><path d="m124.384 41.4719-12.035 23.894-12.034-23.894 5.359-.027 6.675 13.254 6.663-13.227z"/><path d="m73.2382 60.024c-1.282-.067-1.989-.705-2.183-1.975-.079-.518-.103-1.048-.103-1.572v-23.1h-5.404v23.684c.001.818.024 1.647.144 2.455.285 1.918 1.079 3.55 2.852 4.543 1.165.653 2.447.878 3.757.885.979.006 1.959-.105 2.936-.163v-4.751c-.681 0-1.342.029-1.999-.006z"/><path d="m1.064 28 24.936 13.864v-8.485l-9.5-5.379z"/><path d="m5.944 0-1.647 7.64 21.253 11.36h15.641z"/></g><path d="m19 64.5h7v-21l-7-4z" fill="#00aeea"/><path d="m1.651 20.0439-1.651 6.956h40.825l1.582-6.956z" fill="#00aeea"/><path d="m27 33.377v4.951 26.172h5.084v-26.172h8.347v-4.951z" fill="#002f63"/></g></svg></div>
+  <nav class="tnav">
+    <span>II sammas <i class="car">▾</i></span>
+    <span>III sammas <i class="car">▾</i></span>
+    <span>Täiendav Kogumisfond <i class="car">▾</i></span>
+    <span>Ühistu <i class="car">▾</i></span>
+    <span class="active">Blogi <i class="car">▾</i></span>
+    <span>Meist <i class="car">▾</i></span>
+  </nav>
+  <div class="tright">
+    <span class="ten">EN</span>
+    <span class="tbtn out">Sisenen</span>
+    <span class="tbtn fill">Toon II samba Tulevasse</span>
+  </div>
+  <span class="tburger">☰</span>
+</div></header>
+
+<main class="article">
+  <h1>Tõsta II samba makset — iga euro maksab sulle vaid 78 senti</h1>
+  <p class="dek">Ülejäänu tuleb maksuvõidust, sest sissemakse on tulumaksuvaba. Vali enne 30. novembrit, kui suure osa palgast II sambasse suunad: 2, 4 või 6%.</p>
+
+  <!-- Hero = coin-kaart + CTA -->
+  <div class="coincard">
+    <div class="coins-big" role="img" aria-label="Saad 0,78 eurot vähem netopalka ja paned ühe euro rohkem tulevikuks kõrvale">
+      <div class="coin net">0,78 €<small>vähem netopalka</small></div><div class="arrow">→</div><div class="coin pil">1,00 €<small>rohkem tulevikuks</small></div>
+    </div>
+    <p class="cc-foot">Turg võib kõikuda — aga maksuvõit on sul igal juhul käes.</p>
+  </div>
+
+  <div class="end-cta"><a class="cta cta-2l" href="https://pension.tuleva.ee/2nd-pillar-payment-rate"><span class="cta-main">Tõstan sissemakset →</span><span class="cta-dl">Tähtaeg 30. november</span></a></div>
+  <p class="cta-reassure">Saad määra igal aastal muuta — ka tagasi 2%-le, tasuta ja tagajärgedeta. Täna ei pane sa midagi lukku. Avaldus võtab paar minutit, kinnitad Smart-ID või pangalingiga.</p>
+  <div class="trust-strip"><span>Ligi 50 000 inimest on makset juba tõstnud</span><span>Tuleva tasud on Eesti ühed madalaimad</span><span>Vara hoitud JP Morgani kaudu</span></div>
+
+  <h2>Arvuta, kui palju sina võidad</h2>
+  <p>Sisesta oma brutopalk ja vali, kui suure osa palgast II sambasse suunad — näed kohe, kui palju maksudelt võidad:</p>
+
+  <!-- ===== KALKULAATOR 1: maksuvõit ===== -->
+  <section class="calc" id="calc" aria-label="II samba maksuvõidu kalkulaator">
+
+    <div class="inputs">
+      <div class="field"><label for="gross">Sinu brutopalk kuus</label>
+        <div class="salary-row"><input type="number" id="gross" value="3000" min="0" step="50"> <span class="unit">€</span></div></div>
+      <div class="field"><label>Kui palju paned ise oma palgast? <span class="hint" style="display:inline">(riik suunab sotsiaalmaksust alati lisaks +4%)</span></label>
+        <div class="seg" id="segRate"><button data-r="2" aria-pressed="false">2%</button><button data-r="4" aria-pressed="false">4%</button><button data-r="6" aria-pressed="true">6%</button></div></div>
+    </div>
+
+    <!-- 1) Kui palju maksudelt võidad (ilma müntideta, ilma +28%) -->
+    <div class="block" id="tax">
+      <h4>Kui palju maksudelt võidad?</h4>
+      <p class="taxlead" id="taxLead"></p>
+      <div class="threes">
+        <div class="card net"><p class="big" id="cNet">—</p><p class="cl">läheb su netopalgast / kuus</p></div>
+        <div class="card pil"><p class="big" id="cPil">—</p><p class="cl">laekub su II sambasse / kuus</p><p class="pilnote" id="cPilNote"></p></div>
+        <div class="card tax"><p class="big" id="cTax">—</p><p class="cl">tulumaksuvõit / kuus</p></div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="end-cta"><a class="cta cta-2l" href="https://pension.tuleva.ee/2nd-pillar-payment-rate"><span class="cta-main">Nägid oma võitu? Tõstan sissemakset →</span><span class="cta-dl">Paar minutit · Smart-ID · saad igal aastal muuta</span></a></div>
+
+  <p>Sissemaksed II sambasse ei ole tegelikult maks ega kulu. Raha liigub lihtsalt sinu igapäevakulutustest tulevikuks kogumisse. Mida rohkem kõrvale paned, seda rohkem vara sul tulevikus on.</p>
+
+  <p>Vaata, kui palju vara saad koguda, suunates II sambasse 2%, 4% või 6% palgast:</p>
+
+  <!-- ===== KALKULAATOR 2: vara kasv ===== -->
+  <section class="calc" id="calc2" aria-label="II samba vara kasvu kalkulaator">
+
+    <!-- Vahe-sisend: vanus + tootlus (kuuluvad vara-kasvu juurde) -->
+    <div class="midinput">
+      <p class="mi-lead">Vali vanus ja katseta tootlusega</p>
+      <div class="adv">
+        <div class="field"><label>Sinu vanus — <span class="rngval" id="ageVal">35</span></label>
+          <input type="range" id="age" min="18" max="62" value="35"><div class="hint">Arvutame siin kuni 65. eluaastani. Kui töötad edasi, saad kogumist jätkata ka hiljem. Ja tegelikult ei ole sul tõenäoliselt vaja raha ühe korraga – saad seda kasutada vähehaaval, samal ajal kui ülejäänu turgudel edasi tootlust teenib.</div></div>
+        <div class="field"><label>Oodatav tootlus aastas — <span class="rngval" id="retVal">4%</span></label>
+          <input type="range" id="ret" min="0" max="9" step="0.5" value="4"><div class="hint"><strong>See on näitlik eeldus, mitte lubadus.</strong> Keri liugurit ja vaata, kuidas erinev tootlus tulemust mõjutab — tulevast tootlust ei oska keegi ennustada ja vara väärtus võib ka kahaneda. <em>[Compliance: lõplik vaikeväärtus + allikas/mõõtmisperiood kinnitab Maria.]</em></div></div>
+      </div>
+    </div>
+
+    <!-- 2) Kui palju vara võid koguda -->
+    <div class="wealth" id="wealth">
+      <h4>Kui palju vara juurde kogud?</h4>
+      <div class="wealth-viz">
+        <div class="vbars" id="vbars" aria-label="Kogunenud vara pensionieaks 2%, 4% või 6% määraga">
+          <div class="vbar dim" data-r="2"><span class="vval" id="vv2"></span><span class="vcol" id="vc2"></span><span class="vlbl">2%</span></div>
+          <div class="vbar dim" data-r="4"><span class="vval" id="vv4"></span><span class="vcol" id="vc4"></span><span class="vlbl">4%</span></div>
+          <div class="vbar" data-r="6"><span class="vval" id="vv6"></span><span class="vcol" id="vc6"></span><span class="vlbl">6%</span></div>
+        </div>
+        <div class="chart-wrap"><div id="chart"></div><p class="chart-cap">Liittulu teeb aastatega oma töö · 2% / 4% / 6%</p></div>
+      </div>
+      <p class="note-proj"><strong>Näitlik prognoos valitud eeldustel, mitte lubadus.</strong> Tegelik tulemus sõltub tootlusest ja võib olla oluliselt väiksem; vara väärtus võib ka kahaneda. Arvutus algab uuest aastast ja näitab, kui palju sinu valitud määr <strong>juurde</strong> kogub — lisaks sellele, mis sul II sambas juba on. See on üldine näide, mitte sinu olukorrale kohandatud investeerimissoovitus — see ei arvesta su muid varasid ega eesmärke.</p>
+    </div>
+
+    <details id="dec">
+      <summary>Kust see vara kasv tuleb? <span class="chev">›</span></summary>
+      <div class="dbody">
+        <div class="stack"><span class="s-net" id="sNet"></span><span class="s-state" id="sState"></span><span class="s-tax" id="sTax"></span><span class="s-grow" id="sGrow"></span></div>
+        <div class="legend">
+          <div><span class="dot d-net"></span> Oma netopalgast kõrvale pandud <span class="v" id="lNet"></span></div>
+          <div><span class="dot d-state"></span> Riigi panus sotsiaalmaksust <span class="v" id="lState"></span></div>
+          <div><span class="dot d-tax"></span> Riigi panus tulumaksust (sinu maksuvõit) <span class="v" id="lTax"></span></div>
+          <div><span class="dot d-grow"></span> Näite eeldustes arvestatud tootlus <span class="v" id="lGrow"></span></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="assume">
+      <summary>Kuidas me seda arvutame? <span class="chev">›</span></summary>
+      <div class="dbody"><ul>
+        <li>Tulumaks 22%, maksuvaba tulu 700 €/kuus, töötuskindlustusmakse 1,6%</li>
+        <li>Riik suunab lisaks +4% brutopalga suurusest, võttes selle sotsiaalmaksust. See mõjutab I samba pensionit — <a class="inline" href="https://tuleva.ee/sotsmaks">tuleva.ee/sotsmaks</a></li>
+        <li>Arvutustes oleme eeldanud, et sinu palk võiks kasvada 3% aastas.</li>
+        <li>Tootluse eeldus on näitlik ja liuguriga muudetav (vaikimisi 4%). Mineviku tootlus ei ütle, milliseks kujuneb tootlus tulevikus, ja vara väärtus võib kahaneda. Selle näite mõte pole ennustada su vara kasvu, vaid teha arusaadavaks, kuidas mõjutab tulevikuvara see, kui palju sa täna kõrvale paned. <em>[Compliance: tootluse allikas/mõõtmisperiood + lõplik vaikeväärtus kinnitab Maria.]</em></li>
+        <li>Tulumaksuvabastus kehtib sissemaksete puhul – vara kasutusel tuleb maksta maksu sõltuvalt sellest, millal ja kuidas vara kasutusele võtad. Eelpensionieast alates saad vara kasutada soodustingimustel – tasud vaid 10% tulumaksu. Kui valid fondipensioni (võtad raha välja vähehaaval, jättes ülejäänu kasvama), ei maksa tulumaksu üldse.</li>
+      </ul></div>
+    </details>
+
+  </section>
+
+  <h2>Hea teada</h2>
+
+  <p>II pensionisammas ei ole muud kui üks investeerimiskonto, kuhu sa kogud elu jooksul endale vara. <strong>See vara on sinu oma ja pärandatav</strong> — kui sinuga midagi juhtub, läheb see sinu lähedastele, mitte riigile. Kogud korraga enda tuleviku ja oma pere jaoks.</p>
+
+  <details class="qa">
+    <summary>Miks on kaval II sambasse rohkem koguda? <span class="chev">›</span></summary>
+    <div class="qabody">
+      <p>Investeerimises kehtib põhimõte: kasuta alati kõigepealt ära maksueelisega võimalused. II samba sissemaksed on tulumaksuvabad. Tänu sellele saad iga <strong>78 sendi</strong> eest, mis sa oma netopalgast „ohverdad", oma II sambasse <strong>terve euro</strong>. Kui investeeriksid sama raha mujale, alustaksid 22% miinusega.</p>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>Mida sissemakse tõstmine tähendab? <span class="chev">›</span></summary>
+    <div class="qabody">
+      <p>Su palgast liigub palgapäeval II sambasse vaikimisi <strong>2%</strong>. Lisaks suunab riik sotsiaalmaksust sinu II samba kontole <strong>4% sinu brutopalga suurusest</strong> — selle riigipoolse osa saad, kui kogud II sambasse. Sissemakset tõstes suureneb sinu enda osa (2% → 4% või 6%); riigi 4% jääb samaks.</p>
+      <p>Sina saad üks kord aastas sissemakse suurust tõsta (või vajadusel langetada) – valikus on 2% kõrval 4% või 6%. Ligi 50 000 Eesti inimest on oma makset juba tõstnud.</p>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>Aga kui mul ootamatult raha vaja on? <span class="chev">›</span></summary>
+    <div class="qabody">
+      <p>Ole aus iseenda vastu: <strong>juba II sambasse kogutud raha on mõeldud pensioniks ja jääb kasvama kuni pensionieani — see ei ole hoiukonto</strong>, millelt saaks ootamatu kulu katta. Enne pensioniiga on väljavõtt võimalik, aga jäik: korraga kogu summa, mitu kuud ootamist ja 22% tulumaks.</p>
+      <p>Küll aga ei seo tänane valik sind millegi lõplikuga: <strong>sa otsustad igal aastal uuesti, kui palju juurde paned</strong>, ja kui elu nõuab, võid määra tagasi 2%-le keerata. Seepärast tõsta nii palju, kui saad mugavalt kõrvale jätta. Pensionieale lähenedes muutub kogutud vara kasutamine paindlikuks ja maksusoodsaks.</p>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>Kas sissemakset tasub tõsta, kui olen juba üle 60? <span class="chev">›</span></summary>
+    <div class="qabody">
+      <p>Jah. Nüüd loeb iga aasta – kogumist edasi lükata enam ei saa. Hea uudis: <strong>maksuvõit ei sõltu east.</strong> Iga 78 sendi eest saad II sambasse kohe terve euro, ükskõik kui palju aastaid pensionini jäänud on.</p>
+      <p>Ja kui võtad II sambasse kogutud vara kasutusele vähehaaval, jääb ülejäänu fondi tulu teenima veel pikkadeks aastateks. <a class="inline" href="https://tuleva.ee/soovitused/retsept-60ndates-kogumiseks/">Loe lähemalt kogumisest 60ndates →</a></p>
+      <p>Tahad oma olukorra läbi rääkida päris inimesega? Helista <strong>644 5100</strong> või kirjuta tuleva@tuleva.ee.</p>
+    </div>
+  </details>
+
+  <h2>Miks Tulevas?</h2>
+  <p>Üle <strong>86 000 inimese</strong> kogub juba Tulevas. Tuleva pensionifondide tasud on Eesti ühed madalaimad (<strong>alla 0,3% aastas</strong>*) — ja mida rohkem liikmeid, seda madalamaks need langevad. Tuleva on ühistu: kuulub oma kogujatele, mitte pangale. Sinu vara hoitakse fondi varast rangelt lahus, sõltumatu depoopanga juures.*</p>
+  <p class="midnote">Küsimused? Vastab Tuleva tiim — helista <strong>644 5100</strong> või kirjuta tuleva@tuleva.ee. <em>[*liikmete arv, tasumäär ja depoopank — kontrolli täpsed numbrid + lisa nimega kontaktisik, nagu maja-lehtedel.]</em></p>
+
+  <p class="midnote"><b>Millal mitte tõsta?</b> II sammas on pikaajaline investeering, mitte lähiaja rahapuhver. Kui sul on kõrge intressiga võlga või pole paari kuu reservi, tegele kõigepealt nendega. Tõsta ainult seda, mida sa lähiaastatel ei vaja.</p>
+
+  <p>Sissemakse suurendamiseks esita avaldus enne 30. novembrit. Siis hakkab suurem tükike palgast sinu II sambasse liikuma juba uuest aastast. Kui tähtaeg mööda lasta, saad uue võimaluse suuremat maksuvõitu kasutada alles aasta pärast.</p>
+
+  <p>Valikut saadki muuta üks kord aastas – kui vajadus peaks tekkima, siis ka väiksemaks.</p>
+
+  <h2>Kuidas tõsta — 3 sammuga, paari minutiga</h2>
+  <div class="steps">
+    <div class="step"><span class="num">1</span><span class="stext"><b>Logi sisse</b> aadressil pension.tuleva.ee — Smart-ID, Mobiil-ID või ID-kaardiga.</span></div>
+    <div class="step"><span class="num">2</span><span class="stext"><b>Vali uus määr</b> — 4% või 6% oma palgast.</span></div>
+    <div class="step"><span class="num">3</span><span class="stext"><b>Allkirjasta avaldus.</b> Valmis — uus määr hakkab kehtima juba uuest aastast.</span></div>
+  </div>
+  <p class="cta-reassure">Kõik käib Tuleva keskkonnas — sa ei pea kuhugi mujale logima. Muudad hiljem meelt? Saad määra igal aastal tasuta tagasi keerata.</p>
+
+  <h2 class="final-h">Tee avaldus kohe ja kogu uuest aastast rohkem</h2>
+  <p>Avalduse tegemine võtab paar minutit. Tee see kohe ära ja siis tunne õigustatult uhkust. Oled teinud oma tuleviku heaks midagi, mis töötab edasi iseenesest, iga kuu, märkamatult.</p>
+  <div class="end-cta"><a class="cta cta-2l" href="https://pension.tuleva.ee/2nd-pillar-payment-rate"><span class="cta-main">Tõstan sissemakset →</span><span class="cta-dl">Tähtaeg 30. november</span></a></div>
+
+  <div class="legal">
+    <p>Finantsteenust pakub Tuleva Fondid AS. Tutvu tingimuste, prospekti ja põhiteabega <a class="inline" href="https://tuleva.ee">tuleva.ee</a> ning küsi nõu asjatundjalt tuleva@tuleva.ee või 644 5100.</p>
+    <p>Maksustamine oleneb isikuga seotud asjaoludest, sh residentsusest. Maksuseadused muutuvad ajas. Riigi 4% tuleb sotsiaalmaksust ja mõjutab I samba pensionit (<a class="inline" href="https://tuleva.ee/sotsmaks">tuleva.ee/sotsmaks</a>).</p>
+    <p>Kalkulaatori arvutused on näitlikud ja üldharivad, mitte personaalne investeerimissoovitus. Pikaajalised summad on näitlikud prognoosid, mitte lubadus — tootlus ei ole garanteeritud, mineviku tootlus ei taga tuleviku oma ja investeeringu väärtus võib nii kasvada kui kahaneda. Maksemäära tõstmine vähendab sinu netopalka.</p>
+    <p>Saad tulevikuks koguda ka III sambasse (maksuvõiduga kuni 15% brutopalgast, max 6000 €/aastas). <a class="inline" href="#">Loe III samba kohta →</a></p>
+  </div>
+</main>
+
+<footer class="sitefoot">Tuleva · ühistu, mis kuulub oma liikmetele · prototüüp v4</footer>
+
+<script>
+/* ===== Kanooniline mootor (VERBATIM) — ära muuda ===== */
+(function (global) {
+  const TAX=0.22,BASIC_EXEMPTION=700,UNEMPLOYMENT=0.016,STATE=0.04,RET_AGE=65,SALARY_GROWTH=0.03;
+  function monthlyNet(gross,rate){const contrib=gross*rate,unemp=gross*UNEMPLOYMENT,taxBase=Math.max(0,gross-contrib-unemp-BASIC_EXEMPTION),tax=TAX*taxBase;return gross-contrib-unemp-tax;}
+  function fvGrowing(pmt0,annual,years,salaryGrowth){const n=Math.round(years*12);if(n<=0)return 0;const i=Math.pow(1+annual,1/12)-1,gm=Math.pow(1+salaryGrowth,1/12)-1;if(Math.abs(i-gm)<1e-12)return pmt0*n*Math.pow(1+i,n-1);return pmt0*(Math.pow(1+i,n)-Math.pow(1+gm,n))/(i-gm);}
+  function sumGrowing(pmt0,years,salaryGrowth){const n=Math.round(years*12);if(n<=0)return 0;const gm=Math.pow(1+salaryGrowth,1/12)-1;if(gm===0)return pmt0*n;return pmt0*(Math.pow(1+gm,n)-1)/gm;}
+  global.TulevaCalc={monthlyNet,fvGrowing,sumGrowing,constants:{TAX,STATE,SALARY_GROWTH,RET_AGE}};
+})(window);
+
+const $=s=>document.querySelector(s);
+const eur=(x,dec=0)=>(Math.round(x*(dec?100:1))/(dec?100:1)).toLocaleString('et-EE',{minimumFractionDigits:dec,maximumFractionDigits:dec})+' €';
+const TAX=0.22,STATE=0.04,SG=0.03;
+const state={gross:3000,rate:0.06,age:35,ret:0.04};
+
+function buildChart(gross,annual,age,selRate){
+  const years=Math.max(1,65-age),rates=[0.02,0.04,0.06],colors=['#5C738C','#00AEEA','#002F63'];
+  const W=360,H=230,padL=50,padR=16,padT=12,padB=26,pw=W-padL-padR,ph=H-padT-padB;
+  const trajs=rates.map(r=>{const a=[];for(let t=0;t<=years;t++)a.push(TulevaCalc.fvGrowing((r+STATE)*gross,annual,t,SG));return a;});
+  const maxY=Math.max(trajs[2][years],1);
+  const X=t=>padL+(t/years)*pw,Y=v=>padT+ph-(v/maxY)*ph;
+  const kEur=v=>Math.round(v/1000).toLocaleString('et-EE')+' k€';
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Vara kasv vanusega 2%, 4% ja 6% määraga — näitlik prognoos">`;
+  [0,0.5,1].forEach(f=>{const yy=Y(maxY*f);s+=`<line class="grid" x1="${padL}" y1="${yy.toFixed(1)}" x2="${W-padR}" y2="${yy.toFixed(1)}"/><text class="cy" x="${padL-7}" y="${(yy+3).toFixed(1)}" text-anchor="end">${f===0?'0':kEur(maxY*f)}</text>`;});
+  [0,0.5,1].forEach(f=>{const t=Math.round(years*f),xx=X(t);s+=`<text class="cx" x="${xx.toFixed(1)}" y="${H-9}" text-anchor="middle">${age+t} a</text>`;});
+  rates.forEach((r,i)=>{const pts=trajs[i].map((v,t)=>X(t).toFixed(1)+','+Y(v).toFixed(1)).join(' ');const sel=Math.abs(r-selRate)<1e-9;s+=`<polyline points="${pts}" fill="none" stroke="${colors[i]}" stroke-width="${sel?3.6:2}" opacity="${sel?1:.5}" stroke-linejoin="round" stroke-linecap="round"/>`;});
+  rates.forEach((r,i)=>{const v=trajs[i][years],sel=Math.abs(r-selRate)<1e-9;s+=`<text class="cend" x="${(X(years)-3).toFixed(1)}" y="${(Y(v)-5).toFixed(1)}" text-anchor="end" fill="${colors[i]}" opacity="${sel?1:.65}">${Math.round(r*100)}%</text>`;});
+  return s+'</svg>';
+}
+
+function segInit(){document.querySelectorAll('#segRate button').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('#segRate button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');state.rate=parseFloat(b.dataset.r)/100;render();});});}
+
+function render(){
+  const g=state.gross,r=state.rate,years=Math.max(0,65-state.age),rPct=Math.round(r*100),retPct=Math.round(state.ret*1000)/10;
+  // 1) Maksuvõit — absoluutne valitud määral (kuus)
+  const yourGross=r*g, netOutlay=(1-TAX)*r*g, taxWin=TAX*r*g, stateAdd=STATE*g, inflow=(r+STATE)*g;
+  $('#taxLead').innerHTML='Kui paned ise <b>'+rPct+'%</b> oma palgast, siis iga kuu:';
+  $('#cNet').textContent=eur(netOutlay,2);
+  $('#cPil').textContent=eur(inflow);
+  $('#cTax').textContent='+'+eur(taxWin,2);
+  $('#cPilNote').textContent='(brutopalgast '+eur(yourGross)+' + sotsmaksust '+eur(stateAdd)+')';
+  // 2) Vara kasv — absoluutne 2/4/6, valitud esile
+  const fv=rr=>TulevaCalc.fvGrowing((rr+STATE)*g,state.ret,years,SG);
+  const fv2=fv(0.02),fv4=fv(0.04),fv6=fv(0.06),maxB=Math.max(fv2,fv4,fv6)||1,colH=150;
+  [['2',fv2,0.02],['4',fv4,0.04],['6',fv6,0.06]].forEach(([k,v,rr])=>{$('#vv'+k).textContent=eur(v);$('#vc'+k).style.height=Math.max(4,v/maxB*colH)+'px';$('#vc'+k).closest('.vbar').classList.toggle('dim',Math.abs(rr-r)>1e-9);});
+  $('#chart').innerHTML=buildChart(g,state.ret,state.age,r);
+  // 3) Dekomp — absoluutne valitud määral, 4 osa
+  const cNet=TulevaCalc.sumGrowing(netOutlay,years,SG), cTax=TulevaCalc.sumGrowing(taxWin,years,SG), cState=TulevaCalc.sumGrowing(stateAdd,years,SG);
+  const fvTot=fv(r), grow=Math.max(0,fvTot-(cNet+cTax+cState)), tot=fvTot||1;
+  $('#sNet').style.width=(cNet/tot*100)+'%';$('#sState').style.width=(cState/tot*100)+'%';$('#sTax').style.width=(cTax/tot*100)+'%';$('#sGrow').style.width=(grow/tot*100)+'%';
+  $('#lNet').textContent=eur(cNet);$('#lState').textContent=eur(cState);$('#lTax').textContent=eur(cTax);$('#lGrow').textContent=eur(grow);
+}
+$('#gross').addEventListener('input',e=>{state.gross=Math.max(0,parseFloat(e.target.value)||0);render();});
+$('#age').addEventListener('input',e=>{state.age=parseInt(e.target.value);$('#ageVal').textContent=state.age;render();});
+$('#ret').addEventListener('input',e=>{state.ret=parseFloat(e.target.value)/100;$('#retVal').textContent=parseFloat(e.target.value)+'%';render();});
+segInit();render();
+</script>
+</body>
+</html>
