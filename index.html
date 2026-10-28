@@ -118,6 +118,9 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
 .chart-wrap .grid{stroke:var(--border);stroke-width:1}.chart-wrap .cend{font-size:11px;font-weight:700}
 .chart-cap{font-size:12px;color:var(--text3);text-align:center;margin-top:6px}
 .note-proj{font-size:13px;color:var(--text2);background:var(--bg-blue2);border-radius:var(--r2);padding:10px 12px;margin-top:12px;line-height:1.45}
+.reassure{background:var(--bg-blue2);border:1px solid var(--border-blue);border-radius:var(--r3);padding:16px 18px;margin:0 0 20px}
+.reassure h4{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:18px;margin:0 0 8px}
+.reassure p{font-size:16px;color:var(--text);line-height:1.55;margin:0}
 @media(max-width:560px){.wealth-viz{flex-direction:column}.vbars{flex-basis:auto;width:100%;height:150px}.threes{grid-template-columns:1fr}}
 
 .calc details{border:1px solid var(--border);border-radius:var(--r2);margin-bottom:12px;background:#fff;overflow:hidden}
@@ -229,6 +232,11 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
 
   <p>Sissemaksed II sambasse ei ole tegelikult maks ega kulu. Raha liigub lihtsalt sinu igapäevakulutustest tulevikuks kogumisse. Mida rohkem kõrvale paned, seda rohkem vara sul tulevikus on.</p>
 
+  <div class="reassure">
+    <h4>Aga kui mul on raha vaja?</h4>
+    <p>Tõsta sissemakset nii palju, kui saad mugavalt kõrvale jätta — II sambasse kogutud raha on mõeldud pikaks ajaks. Kuid sa ei seo end ühegi numbriga: määra saad igal aastal uuesti muuta, nii üles kui alla. Ja pensionieale lähenedes muutub kogutud vara kasutamine paindlikuks ja maksusoodsaks.</p>
+  </div>
+
   <p>Vaata, kui palju vara saad koguda, suunates II sambasse 2%, 4% või 6% palgast:</p>
 
   <!-- ===== KALKULAATOR 2: vara kasv ===== -->
@@ -280,16 +288,6 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
         <li>Vara keskmine tootlus aastas 7% — ⚠️ <i>[prototüübis näitlik; kui lisada „Tuleva Maailma Aktsiate Pensionifondi tegelik keskmine tootlus", on see konkreetse fondi tootluse avaldamine — rule 11, vajab mõõtmisperioodi + 1/3/5 a standarditud tootlusi + Tõnu]</i>. Mineviku tootlus ei ütle, milliseks kujuneb tootlus tulevikus. Selle näite mõte pole ennustada su vara kasvu, vaid teha arusaadavaks, kuidas mõjutab tulevikuvara see, kui palju sa täna kõrvale paned.</li>
         <li>Tulumaksuvabastus kehtib sissemaksete puhul – vara kasutusel tuleb maksta maksu sõltuvalt sellest, millal ja kuidas vara kasutusele võtad. Eelpensionieast alates saad vara kasutada soodustingimustel – tasud vaid 10% tulumaksu. Kui valid fondipensioni (võtad raha välja vähehaaval, jättes ülejäänu kasvama), ei maksa tulumaksu üldse.</li>
       </ul></div>
-    </details>
-
-    <details id="liq">
-      <summary>Ära suuna II sambasse raha, mida sul lähiajal vaja läheb. <span class="chev">›</span></summary>
-      <div class="dbody">
-        <p style="margin:4px 0 12px">II sambasse (ega ka muul viisil aktsiaturule) ära suuna raha, mida tahad kulutada lähiaastatel.</p>
-        <p style="margin:0 0 12px">Alates 2021. aastast saad II samba raha ka enne pensioniiga välja võtta, aga reeglid on jäigad: <b>korraga kogu summa, mitu kuud ootamist ja 22% tulumaks.</b></p>
-        <p style="margin:0 0 12px">Enamiku jaoks on just see jäikus pigem hea asi: see kaitseb meid inimlike kiusatuste vastu – raha ei sula sõrmede vahelt impulssostudeks.</p>
-        <p style="margin:0">Pensionieale lähenedes (alates umbes 60. eluaastast) muutub kogutud vara kasutamine paindlikuks ja maksude poolest soodsaks.</p>
-      </div>
     </details>
 
   </section>
