@@ -144,7 +144,9 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
 .cta-2l .cta-main{font-size:18px;font-weight:700}
 .cta-2l .cta-dl{font-size:13px;font-weight:500;opacity:.9}
 .cta-sub{text-align:center;font-size:13.5px;margin:10px 0 0;color:var(--text2)}.cta-sub b{color:var(--navy)}
-.cta-reassure{text-align:center;font-size:13.5px;color:var(--text2);margin:10px auto 0;max-width:480px;line-height:1.5}
+.cta-reassure{text-align:center;font-size:13.5px;color:var(--text2);margin:10px auto 0;max-width:500px;line-height:1.5}
+.trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;font-size:13px;font-weight:600;color:var(--navy2);margin:16px auto 4px;max-width:640px;text-align:center}
+.midnote{font-size:13px;color:var(--text2);background:var(--bg-gray);border:1px solid var(--border);border-radius:var(--r2);padding:12px 14px;margin:14px 0;line-height:1.5}.midnote b{color:var(--navy)}
 .end-cta{margin:8px 0}.deadline{text-align:center;font-size:13px;color:var(--text2);margin-top:10px}.deadline b{color:var(--navy)}
 
 
@@ -187,7 +189,8 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
   </div>
 
   <div class="end-cta"><a class="cta cta-2l" href="https://pension.tuleva.ee/2nd-pillar-payment-rate"><span class="cta-main">Tõstan sissemakset →</span><span class="cta-dl">Tähtaeg 30. november</span></a></div>
-  <p class="cta-reassure">Saad määra igal aastal muuta — täna ei pane sa midagi lukku. Avalduse täitmine võtab paar minutit ja kinnitad selle Smart-ID või pangalingiga.</p>
+  <p class="cta-reassure">Saad määra igal aastal muuta — ka tagasi 2%-le, tasuta ja tagajärgedeta. Täna ei pane sa midagi lukku. Avaldus võtab paar minutit, kinnitad Smart-ID või pangalingiga.</p>
+  <div class="trust-strip"><span>Ligi 50 000 inimest on makset juba tõstnud</span><span>Tuleva tasud on Eesti ühed madalaimad</span><span>Vara hoitud JP Morgani kaudu</span></div>
 
   <h2>Arvuta, kui palju sina võidad</h2>
   <p>Sisesta oma brutopalk ja vali, kui suure osa palgast II sambasse suunad — näed kohe, kui palju maksudelt võidad:</p>
@@ -215,6 +218,8 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
 
   </section>
 
+  <div class="end-cta"><a class="cta cta-2l" href="https://pension.tuleva.ee/2nd-pillar-payment-rate"><span class="cta-main">Nägid oma võitu? Tõstan sissemakset →</span><span class="cta-dl">Paar minutit · Smart-ID · saad igal aastal muuta</span></a></div>
+
   <p>Sissemaksed II sambasse ei ole tegelikult maks ega kulu. Raha liigub lihtsalt sinu igapäevakulutustest tulevikuks kogumisse. Mida rohkem kõrvale paned, seda rohkem vara sul tulevikus on.</p>
 
   <p>Vaata, kui palju vara saad koguda, suunates II sambasse 2%, 4% või 6% palgast:</p>
@@ -228,8 +233,8 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
       <div class="adv">
         <div class="field"><label>Sinu vanus — <span class="rngval" id="ageVal">35</span></label>
           <input type="range" id="age" min="18" max="62" value="35"><div class="hint">Arvutame siin kuni 65. eluaastani. Kui töötad edasi, saad kogumist jätkata ka hiljem. Ja tegelikult ei ole sul tõenäoliselt vaja raha ühe korraga – saad seda kasutada vähehaaval, samal ajal kui ülejäänu turgudel edasi tootlust teenib.</div></div>
-        <div class="field"><label>Oodatav tootlus aastas — <span class="rngval" id="retVal">7%</span></label>
-          <input type="range" id="ret" min="0" max="9" step="0.5" value="7"><div class="hint">Vaikeväärtus 7% on <strong>näitlik</strong>, mitte lubadus — maailma aktsiaturud on viimasel 30 aastal toonud keskmiselt ligi 7% aastas, aga tulevikku ei oska keegi ennustada. Keri liugurit, et näha, kuidas erinev tootlus tulemust mõjutab.</div></div>
+        <div class="field"><label>Oodatav tootlus aastas — <span class="rngval" id="retVal">4%</span></label>
+          <input type="range" id="ret" min="0" max="9" step="0.5" value="4"><div class="hint"><strong>See on näitlik eeldus, mitte lubadus.</strong> Keri liugurit ja vaata, kuidas erinev tootlus tulemust mõjutab — tulevast tootlust ei oska keegi ennustada ja vara väärtus võib ka kahaneda. <em>[Compliance: lõplik vaikeväärtus + allikas/mõõtmisperiood kinnitab Maria.]</em></div></div>
       </div>
     </div>
 
@@ -244,7 +249,7 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
         </div>
         <div class="chart-wrap"><div id="chart"></div><p class="chart-cap">Liittulu teeb aastatega oma töö · 2% / 4% / 6%</p></div>
       </div>
-      <p class="note-proj">Arvutus algab uuest aastast ja näitab, kui palju sinu valitud määr <strong>juurde</strong> kogub — lisaks sellele, mis sul II sambas juba on.</p>
+      <p class="note-proj"><strong>Näitlik prognoos valitud eeldustel, mitte lubadus.</strong> Tegelik tulemus sõltub tootlusest ja võib olla oluliselt väiksem; vara väärtus võib ka kahaneda. Arvutus algab uuest aastast ja näitab, kui palju sinu valitud määr <strong>juurde</strong> kogub — lisaks sellele, mis sul II sambas juba on. See on üldine näide, mitte sinu olukorrale kohandatud investeerimissoovitus — see ei arvesta su muid varasid ega eesmärke.</p>
     </div>
 
     <details id="dec">
@@ -266,7 +271,7 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
         <li>Tulumaks 22%, maksuvaba tulu 700 €/kuus, töötuskindlustusmakse 1,6%</li>
         <li>Riik suunab lisaks +4% brutopalga suurusest, võttes selle sotsiaalmaksust. See mõjutab I samba pensionit — <a class="inline" href="https://tuleva.ee/sotsmaks">tuleva.ee/sotsmaks</a></li>
         <li>Arvutustes oleme eeldanud, et sinu palk võiks kasvada 3% aastas.</li>
-        <li>Vara keskmine tootlus aastas 7% — ⚠️ <i>[prototüübis näitlik; kui lisada „Tuleva Maailma Aktsiate Pensionifondi tegelik keskmine tootlus", on see konkreetse fondi tootluse avaldamine — rule 11, vajab mõõtmisperioodi + 1/3/5 a standarditud tootlusi + Tõnu]</i>. Mineviku tootlus ei ütle, milliseks kujuneb tootlus tulevikus. Selle näite mõte pole ennustada su vara kasvu, vaid teha arusaadavaks, kuidas mõjutab tulevikuvara see, kui palju sa täna kõrvale paned.</li>
+        <li>Tootluse eeldus on näitlik ja liuguriga muudetav (vaikimisi 4%). Mineviku tootlus ei ütle, milliseks kujuneb tootlus tulevikus, ja vara väärtus võib kahaneda. Selle näite mõte pole ennustada su vara kasvu, vaid teha arusaadavaks, kuidas mõjutab tulevikuvara see, kui palju sa täna kõrvale paned. <em>[Compliance: tootluse allikas/mõõtmisperiood + lõplik vaikeväärtus kinnitab Maria.]</em></li>
         <li>Tulumaksuvabastus kehtib sissemaksete puhul – vara kasutusel tuleb maksta maksu sõltuvalt sellest, millal ja kuidas vara kasutusele võtad. Eelpensionieast alates saad vara kasutada soodustingimustel – tasud vaid 10% tulumaksu. Kui valid fondipensioni (võtad raha välja vähehaaval, jättes ülejäänu kasvama), ei maksa tulumaksu üldse.</li>
       </ul></div>
     </details>
@@ -287,7 +292,7 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
   <details class="qa">
     <summary>Mida sissemakse tõstmine tähendab? <span class="chev">›</span></summary>
     <div class="qabody">
-      <p>Su palgast liigub palgapäeval II sambasse vaikimisi <strong>2%</strong>. Riik suunab omalt poolt sinu II sambasse veel <strong>4% sinu brutopalga suurusest</strong>. (See tuleb sotsiaalmaksust – II sambasse kogumine on ainus viis suunata see enda isiklikule kontole.)</p>
+      <p>Su palgast liigub palgapäeval II sambasse vaikimisi <strong>2%</strong>. Lisaks suunab riik sotsiaalmaksust sinu II samba kontole <strong>4% sinu brutopalga suurusest</strong> — selle riigipoolse osa saad, kui kogud II sambasse. Sissemakset tõstes suureneb sinu enda osa (2% → 4% või 6%); riigi 4% jääb samaks.</p>
       <p>Sina saad üks kord aastas sissemakse suurust tõsta (või vajadusel langetada) – valikus on 2% kõrval 4% või 6%. Ligi 50 000 Eesti inimest on oma makset juba tõstnud.</p>
     </div>
   </details>
@@ -310,7 +315,9 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
   </details>
 
   <h2>Miks Tulevas?</h2>
-  <p>Tuleva pensionifondide tasud on Eesti madalaimad — ja mida rohkem liikmeid, seda madalamaks need langevad. Sinu vara hoitakse väljaspool Eestit JP Morgani kaudu, mis hajutab riski. Tuleva on ühistu: kuulub oma liikmetele, mitte pangale.</p>
+  <p>Tuleva pensionifondide tasud on Eesti ühed madalaimad — ja mida rohkem liikmeid, seda madalamaks need langevad. Sinu vara hoitakse väljaspool Eestit JP Morgani kaudu, mis hajutab riski. Tuleva on ühistu: kuulub oma liikmetele, mitte pangale.</p>
+
+  <p class="midnote"><b>Millal mitte tõsta?</b> II sammas on pikaajaline investeering, mitte lähiaja rahapuhver. Kui sul on kõrge intressiga võlga või pole paari kuu reservi, tegele kõigepealt nendega. Tõsta ainult seda, mida sa lähiaastatel ei vaja.</p>
 
   <p>Sissemakse suurendamiseks esita avaldus enne 30. novembrit. Siis hakkab suurem tükike palgast sinu II sambasse liikuma juba uuest aastast. Kui tähtaeg mööda lasta, saad uue võimaluse suuremat maksuvõitu kasutada alles aasta pärast.</p>
 
@@ -343,7 +350,7 @@ input[type=range]{width:100%;accent-color:var(--action)}.rngval{font-weight:700;
 const $=s=>document.querySelector(s);
 const eur=(x,dec=0)=>(Math.round(x*(dec?100:1))/(dec?100:1)).toLocaleString('et-EE',{minimumFractionDigits:dec,maximumFractionDigits:dec})+' €';
 const TAX=0.22,STATE=0.04,SG=0.03;
-const state={gross:3000,rate:0.06,age:35,ret:0.07};
+const state={gross:3000,rate:0.06,age:35,ret:0.04};
 
 function buildChart(gross,annual,age,selRate){
   const years=Math.max(1,65-age),rates=[0.02,0.04,0.06],colors=['#5C738C','#00AEEA','#002F63'];
